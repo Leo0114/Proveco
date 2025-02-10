@@ -1,0 +1,28 @@
+---
+import { ClientRouter } from "astro:transitions";
+import Navbar from "@components/Navbar.astro";
+import ScrollToTop from "@components/shared/ScrollTop";
+import Footer from "@components/Footer.astro";
+import "@styles/global.css";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="icon" type="image/svg+xml" href="/logo.avif" />
+    <meta name="generator" content={Astro.generator} />
+    <ClientRouter />
+    <title>Proveco</title>
+  </head>
+  <body class="bg-fondo text-texto-claro scroll-smooth">
+    <Navbar />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <ScrollToTop client:load />
+  </body>
+</html>

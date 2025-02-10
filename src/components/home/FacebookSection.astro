@@ -1,0 +1,24 @@
+---
+import { Icon } from "astro-icon/components";
+
+const facebookUrl = "https://www.facebook.com/tu-pagina"; // Cambia esto con la URL real
+---
+
+<section
+  class="w-full bg-blue-600 py-10 text-white text-center flex flex-col items-center"
+>
+  <h2 class="text-3xl font-bold mb-4">Síguenos en Facebook</h2>
+  <p class="text-lg mb-6 max-w-lg">
+    Mantente al día con nuestras últimas novedades, promociones y noticias
+    siguiéndonos en Facebook.
+  </p>
+  <a
+    href={facebookUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="flex items-center gap-3 bg-white text-blue-600 font-semibold px-6 py-3 rounded-full shadow-md hover:bg-gray-100 transition duration-300"
+  >
+    <Icon name="facebook" size="24" />
+    Visítanos en Facebook
+  </a>
+</section>

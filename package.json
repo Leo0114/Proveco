@@ -1,0 +1,28 @@
+{
+  "name": "provco",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.2.0",
+    "@tailwindcss/vite": "^4.0.3",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@types/swiper": "^5.4.3",
+    "astro": "^5.2.5",
+    "astro-icon": "^1.1.5",
+    "astro-navbar": "^2.3.9",
+    "framer-motion": "^12.3.1",
+    "photoswipe": "^5.4.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-tabs": "^6.1.0",
+    "swiper": "^11.2.2",
+    "tailwindcss": "^4.0.3"
+  }
+}

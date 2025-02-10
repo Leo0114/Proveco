@@ -1,0 +1,60 @@
+---
+import { Astronav, MenuIcon, MenuItems, StickyHeader } from "astro-navbar";
+import Link from "./Link.astro";
+import { Image } from "astro:assets";
+import logo from "@assets/logo.avif";
+import { navbarRoutes } from "@constants/rutas";
+---
+
+<StickyHeader
+  class="gap-6 z-20 transition-all w-full ease-in-out bg-navbar top-0"
+  scrollY={50}
+>
+  <div class="max-w-screen-xl mx-auto px-8 md:px-10 leading-tight">
+    <Astronav closeOnClick>
+      <div
+        class="py-4 flex justify-between items-center flex-col lg:flex-row relative w-full"
+      >
+        <div>
+          <div class="flex justify-between items-center w-full gap-4">
+            <a href="/" class="flex flex-row items-center">
+              <Image
+                src={logo}
+                alt="Logo"
+                class="rounded-md w-24 h-auto"
+                loading={"eager"}
+              />
+              <div
+                class="text-center text-white flex flex-col font-bold prose-lg ml-2"
+              >
+                <span class="text-4xl font-semibold">Proveco</span>
+              </div>
+            </a>
+            <div class="block md:hidden">
+              <MenuIcon class="w-6 h-6 text-primary" />
+            </div>
+          </div>
+        </div>
+        <MenuItems
+          class="hidden lg:flex lg:items-center lg:w-auto py-4 md:py-0"
+        >
+          <ul
+            class="flex flex-col lg:flex-row md:gap-0 gap-10 items-center mt-4 md:mt-0 justify-center"
+          >
+            {
+              navbarRoutes.map(({ path, name }) => (
+                <Link href={path} name={name} />
+              ))
+            }
+          </ul>
+        </MenuItems>
+      </div>
+    </Astronav>
+  </div>
+</StickyHeader>
+
+<style is:global>
+  .astronav-dropdown:hover .dropdown-toggle {
+    display: block;
+  }
+</style>

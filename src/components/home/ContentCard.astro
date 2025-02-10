@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  imagen: ImageMetadata;
+  title: string;
+  content: string;
+  path: string;
+}
+
+const { imagen, title, content, path } = Astro.props;
+---
+
+<div
+  class="group relative flex flex-col bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-out hover:-translate-y-2 overflow-hidden max-w-sm mx-auto"
+>
+  {/* Contenedor de imagen con hover effect */}
+  <div class="relative overflow-hidden h-56">
+    <Image
+      src={imagen}
+      alt={title}
+      width="400"
+      height="225"
+      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      loading="lazy"
+    />
+    {/* Efecto de superposición */}
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    >
+    </div>
+  </div>
+
+  {/* Contenido de la tarjeta */}
+  <div class="p-6 flex flex-col flex-grow">
+    <h3 class="text-2xl font-bold text-texto mb-3">
+      {title}
+    </h3>
+    <p class="text-texto mb-4 flex-grow">{content}</p>
+
+    {/* Botón con animación */}
+    <a
+      href={path}
+      class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark transition-all duration-300 transform hover:scale-[1.02] shadow-sm w-full"
+      aria-label={`Ir a ${title}`}
+    >
+      Ver más
+      <svg
+        class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+      </svg>
+    </a>
+  </div>
+
+  <style>
+    /* Animación de entrada personalizada */
+    @keyframes cardEntrance {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card-animate {
+      animation: cardEntrance 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+  </style>
+</div>

@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeroSlider from "@components/home/HeroSlider";
+import { Slider } from "@constants/hero";
+import OCard from "@components/try/OCard.astro";
+import Content from "@components/try/Content.astro";
+import FacebookSection from "@components/home/FacebookSection.astro";
+import ContentGrid from "@components/home/ContentGrid.astro";
+---
+
+<Layout>
+  <HeroSlider slides={Slider} client:load />
+  <Content />
+  <ContentGrid />
+  <OCard />
+
+  <FacebookSection />
+</Layout>

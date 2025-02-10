@@ -1,0 +1,43 @@
+---
+import Container from "@components/Container.astro";
+import { Image } from "astro:assets";
+import imagen from "@assets/monitor.webp";
+---
+
+<Container>
+  <div
+    class="flex flex-col md:flex-row items-center justify-between bg-gradient-to-br from-[#386fdd] via-[#439dc0] to-[#67dd80] rounded-3xl relative xl:py-8"
+  >
+    <div class="px-10 py-6 xl:px-20 w-full lg:w-1/2 lg:text-left">
+      <div class="pb-8">
+        <h3 class="text-6xl md:text-6xl lg:text-8xl font-extrabold">
+          <small class="text-2xl md:text-4xl xl:text-[2.75rem] text-gray-900"
+            >Una Muestra de</small
+          ><br />Nuestro <br /> Trabajo
+        </h3><p
+          class="mb-10 tetx-lg md:text-xl font-semibold text-gray-900 mt-4 md:w-[34ch]"
+        >
+          Esta es una pequeña muestra de nuestro trabajo. Dé clic en la pantalla
+          para ver el video.
+        </p><div class="md:pb-20">
+          <button
+            class="uppercase rounded-full bg-gray-900 py-2 px-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 hover:scale-[.98] hover:contrast-150 transition-all"
+            name="Open dialog"
+            type="button">Ver demo reel</button
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="w-1/3 lg:w-[48%] md:flex items-center justify-center absolute top-0 right-0 h-full overflow-hidden my-4"
+    >
+      <div class="absolute w-full">
+        <Image
+          src={imagen}
+          alt="Monitor computadora de escritorio"
+          class="object-cover rounded-md"
+        />
+      </div>
+    </div>
+  </div>
+</Container>

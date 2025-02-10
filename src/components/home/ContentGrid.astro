@@ -1,0 +1,23 @@
+---
+import Container from "@components/Container.astro";
+import { sections } from "@constants/sections";
+import ContentCard from "./ContentCard.astro";
+---
+
+<div class="">
+  <Container>
+    <div
+      class="py-8 text-texto flex items-center flex-col justify-center text-center"
+    >
+      <span class="font-extrabold text-texto mb-2 text-3xl"
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. !</span
+      >
+      <p>Lorem ipsum dolor sit.</p>
+    </div>
+    <section
+      class="flex flex-col md:flex-row justify-center items-center gap-8"
+    >
+      {sections.map((section) => <ContentCard {...section} />)}
+    </section>
+  </Container>
+</div>

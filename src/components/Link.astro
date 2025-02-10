@@ -1,0 +1,64 @@
+---
+interface Props {
+  href: string;
+  name: string;
+}
+
+const { href, name } = Astro.props;
+const currentPath = Astro.url.pathname;
+const isActive = currentPath === href;
+---
+
+<li class="group relative">
+  <a
+    class={`text-xl font-semibold leading-tight truncate mx-4 ${
+      isActive
+        ? "text-primary"
+        : "text-white hover:text-primary transition-colors duration-300"
+    }`}
+    aria-label={`Ruta a ${name}`}
+    href={href}
+  >
+    {name}
+
+    <!-- Borde animado para hover y active  -->
+    <div
+      class={`
+      absolute -bottom-1 left-0 w-full h-0.5 
+      bg-primary origin-left 
+      transition-all duration-300 
+      ${isActive ? "scale-x-100" : "scale-x-0"}
+      group-hover:scale-x-100
+    `}
+    >
+    </div>
+  </a>
+
+  <!-- Animación para el estado activo  -->
+  {
+    isActive && (
+      <div
+        transition:name="menu-line"
+        class="absolute -bottom-1 left-0 w-full h-0.5 bg-primary"
+        style="animation: line-grow 0.3s ease-out forwards;"
+      />
+    )
+  }
+</li>
+
+<style>
+  @keyframes line-grow {
+    from {
+      transform: scaleX(0);
+      opacity: 0;
+    }
+    to {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+  }
+
+  .group-hover\:scale-x-100 {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+</style>

@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colores principales de la marca */
+  --color-primary: #f44336; /* Rojo corporativo (logo) */
+  --color-bluePrimary: #01476b; /* Azul institucional */
+
+  /* Colores secundarios y de apoyo */
+  --color-secondary: #ffa726; /* Naranja/Naranjo - simboliza energía y calidez animal */
+  --color-accent: #4caf50; /* Verde natural - relacionado con alimentos y vida */
+
+  /* Colores neutros y fondos */
+  --color-fondo: #f5f5f5; /* Fondo claro principal */
+  --color-aFondo: #ffffff; /* Fondo alternativo blanco puro */
+  --color-texto: #333333; /* Texto principal oscuro */
+  --color-texto-claro: #757575; /* Texto secundario */
+
+  /* Componentes específicos */
+  --color-navbar: var(
+    --color-bluePrimary
+  ); /* Navbar usando el azul corporativo */
+  --color-footer: var(--color-bluePrimary); /* Footer igual al navbar */
+  --color-botones: var(--color-primary); /* Botones principales en rojo */
+  --color-bordes: #e0e0e0; /* Bordes sutiles */
+}
+
+@layer utilities {
+  /* Animación para el fade-in-up */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.5s ease-out both;
+    animation-delay: var(--animation-delay, 0);
+  }
+
+  /* Botón primario */
+  .button-primary {
+    @apply inline-flex items-center justify-center px-6 py-2.5 md:px-8 md:py-3 bg-[var(--color-primary)] hover:bg-[var(--color-primary)] text-white rounded-lg transition-all duration-300;
+  }
+}
+/* Bullet genérico */
+.swiper-pagination-bullet {
+  @apply w-8 h-8 border-4 hover:opacity-75 shadow-md active:opacity-50 border-white bg-white mx-2 transition-all duration-300 rounded-sm ease-in-out hover:scale-110;
+}
+
+/* Bullet activo */
+
+.swiper-pagination-bullet-active {
+  @apply bg-[var(--color-primary)] border-none transition-all duration-300 ease-in-out opacity-100 shadow-lg;
+  width: 2.5rem;
+}
