@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import logo from "@assets/logo.avif";
+---
+
+<section class="mb-20">
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="space-y-6">
+      <h2 class="text-3xl font-bold text-gray-900">Nuestra Trayectoria</h2>
+      <p class="text-lg text-gray-600">
+        Desde nuestros inicios en 2013, PROVECO se ha dedicado a proporcionar
+        soluciones integrales para el cuidado y bienestar animal. Lo que comenzó
+        como una pequeña empresa familiar, se ha convertido en un referente en
+        el sector veterinario.
+      </p>
+      <p class="text-lg text-gray-600">
+        A lo largo de estos años, hemos expandido nuestra gama de productos y
+        servicios, siempre manteniendo nuestro compromiso con la calidad y la
+        innovación.
+      </p>
+    </div>
+    <div class="relative h-96 rounded-xl overflow-hidden shadow-xl">
+      <Image
+        src={logo}
+        alt="Historia de Proveco"
+        class="object-cover w-full h-full"
+      />
+    </div>
+  </div>
+</section>

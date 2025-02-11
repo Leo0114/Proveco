@@ -1,0 +1,17 @@
+---
+interface Props {
+  title: string;
+  body?: string;
+}
+const lorem =
+  " Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi harum omnis repellat minima illo";
+
+const { title, body = lorem } = Astro.props;
+---
+
+<div class="items-center justify-center text-center mb-8">
+  <h2 class="text-4xl md:text-5xl font-extrabold text-texto mb-6">
+    {title}
+  </h2>
+  <p class="text-base md:text-lg text-texto-claro mb-6">{body}</p>
+</div>

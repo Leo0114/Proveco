@@ -4,7 +4,6 @@ import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import { useState } from "react";
-import "@styles/global.css";
 
 export type SliderHero = {
   title?: string;

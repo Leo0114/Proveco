@@ -1,106 +1,86 @@
 ---
+import { Icon } from "astro-icon/components";
 import Container from "@components/Container.astro";
+import Title from "@components/shared/Title.astro";
 ---
 
-<section class="py-16">
+<section class="">
   <Container>
-    <div class="items-center justify-center text-center mb-8">
-      <h2 class="text-4xl font-bold text-blanco mb-6">Contact Us</h2>
-      <p class="text-base text-blanco/80 mb-6">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi harum
-        omnis repellat minima illo.
-      </p>
-    </div>
+    <Title title="Contactanos" />
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Left Side: Contact Info -->
+      <!-- Lado Izquierdo: Información de Contacto -->
       <div class="flex flex-col space-y-6">
-        <!-- Call Us Card -->
-        <div class="bg-lightPurple text-blanco p-6 rounded-2xl shadow-lg">
+        <!-- Tarjeta "Llámanos" -->
+        <div class="bg-bluePrimary text-aFondo p-6 rounded-2xl shadow-lg">
           <div class="flex items-center space-x-4">
-            <div class="text-blanco p-3 bg-purple-800 rounded-full">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                ><rect width="24" height="24" fill="none"></rect><path
-                  fill="#fff"
-                  d="m21 15.46l-5.27-.61l-2.52 2.52a15.05 15.05 0 0 1-6.59-6.59l2.53-2.53L8.54 3H3.03C2.45 13.18 10.82 21.55 21 20.97z"
-                ></path></svg
-              >
+            <div class="p-3 bg-primary rounded-full">
+              <Icon name="phone" size={24} class="text-aFondo" />
             </div>
-            <h3 class="text-xl font-bold">Call Us Directly At</h3>
+            <h3 class="text-xl font-bold">Llámanos Directamente</h3>
           </div>
           <p class="text-4xl font-bold my-4">1254 - 234 - 19115234</p>
           <button
-            class="bg-white text-lightPurple px-6 py-3 rounded-full font-medium hover:bg-blanco transition"
+            class="bg-aFondo text-bluePrimary px-6 py-3 rounded-full font-medium hover:bg-fondo transition-all"
           >
-            Contact Us
+            Contáctanos
           </button>
         </div>
 
-        <!-- Email Us Card -->
-        <div class="bg-blanco text-purple-950 p-6 rounded-2xl shadow-lg">
+        <!-- Tarjeta "Chatea con Nosotros" -->
+        <div class="bg-primary text-aFondo p-6 rounded-2xl shadow-lg">
           <div class="flex items-center space-x-4">
-            <div class="text-blanco p-3 bg-purple-300 rounded-full">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                ><rect width="24" height="24" fill="none"></rect><path
-                  fill="#000"
-                  d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2zm-2 0l-8 5l-8-5zm0 12H4V8l8 5l8-5z"
-                ></path></svg
-              >
+            <div class="p-3 bg-bluePrimary rounded-full">
+              <Icon name="email" size={24} class="text-aFondo" />
             </div>
-            <h3 class="text-xl font-bold">Chat With Our Team</h3>
+            <h3 class="text-xl font-bold">
+              Comunicate directamente con nuestro equipo
+            </h3>
           </div>
-          <p class="text-base font-medium my-4">email@hokinz.com</p>
+          <p class="text-base font-medium my-4">email@proveco.com</p>
           <button
-            class="bg-purple-400 text-purple-950 px-6 py-3 rounded-full font-medium hover:bg-blanco transition"
+            class="bg-aFondo text-primary px-6 py-3 rounded-full font-medium hover:opacity-70 transition"
           >
-            Contact Us
+            Contáctanos
           </button>
         </div>
       </div>
 
-      <!-- Right Side: Form -->
+      <!-- Lado Derecho: Formulario de Contacto -->
       <div
-        class="bg-blanco p-8 rounded-2xl shadow-lg flex items-center justify-center"
+        class="bg-aFondo p-8 rounded-2xl shadow-lg flex items-center justify-center"
       >
-        <form class="space-y-4">
+        <form class="space-y-4 text-texto">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <input
               type="text"
               placeholder="Nombre"
-              class="border border-blanco rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lightPurple"
+              class="border border-[var(--color-bordes)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
             />
             <input
               type="email"
-              placeholder="Email "
-              class="border border-blanco rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lightPurple"
+              placeholder="Email"
+              class="border border-[var(--color-bordes)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
             />
           </div>
           <div>
             <input
               type="text"
-              placeholder="Numero de Telefono"
-              class="w-full border border-blanco rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lightPurple"
+              placeholder="Número de Teléfono"
+              class="w-full border border-[var(--color-bordes)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
             />
           </div>
           <div>
             <textarea
               placeholder="Mensaje"
               rows="5"
-              class="w-full border border-blanco rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lightPurple"
+              class="w-full border border-[var(--color-bordes)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
             ></textarea>
           </div>
           <button
             type="submit"
-            class="bg-lightPurple text-blanco w-full py-3 rounded-lg font-medium hover:bg-lightPurple/70 transition"
+            class="bg-primary cursor-pointer text-aFondo w-full py-3 rounded-lg font-medium hover:opacity-70 transition"
           >
-            Send Message
+            Enviar Mensaje
           </button>
         </form>
       </div>

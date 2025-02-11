@@ -4,6 +4,7 @@ import Container from "@components/Container.astro";
 import { getCollection } from "astro:content";
 import BlogCard from "@components/blog/BlogCard.astro";
 import { seoConfig } from "@constants/SEO";
+import Title from "@components/shared/Title.astro";
 
 const blogPost = await getCollection(
   "blog",
@@ -14,6 +15,7 @@ const { keywords, description, title } = seoConfig.blog;
 
 <Layout title={title} description={description} keywords={keywords}>
   <Container>
+    <Title title="Blog" />
     <main class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-2 md:mt-16">
       {blogPost.map((post) => <BlogCard post={post} />)}
     </main>

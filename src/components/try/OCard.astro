@@ -1,43 +1,65 @@
 ---
 import Container from "@components/Container.astro";
 import { Image } from "astro:assets";
-import imagen from "@assets/monitor.webp";
+import mascotasImage from "@assets/images/dogs.webp";
 ---
 
 <Container>
-  <div
-    class="flex flex-col md:flex-row items-center justify-between bg-gradient-to-br from-[#386fdd] via-[#439dc0] to-[#67dd80] rounded-3xl relative xl:py-8"
+  <section
+    class="relative overflow-hidden bg-gradient-to-b from-primary to-aFondo md:bg-gradient-to-br md:from-primary md:via-aFondo md:to-primary rounded-3xl xl:rounded-[2.5rem] shadow-lg hover:shadow-xl transition-shadow duration-300"
   >
-    <div class="px-10 py-6 xl:px-20 w-full lg:w-1/2 lg:text-left">
-      <div class="pb-8">
-        <h3 class="text-6xl md:text-6xl lg:text-8xl font-extrabold">
-          <small class="text-2xl md:text-4xl xl:text-[2.75rem] text-gray-900"
-            >Una Muestra de</small
-          ><br />Nuestro <br /> Trabajo
-        </h3><p
-          class="mb-10 tetx-lg md:text-xl font-semibold text-gray-900 mt-4 md:w-[34ch]"
-        >
-          Esta es una pequeña muestra de nuestro trabajo. Dé clic en la pantalla
-          para ver el video.
-        </p><div class="md:pb-20">
-          <button
-            class="uppercase rounded-full bg-gray-900 py-2 px-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 hover:scale-[.98] hover:contrast-150 transition-all"
-            name="Open dialog"
-            type="button">Ver demo reel</button
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <!-- Contenido textual -->
+      <article class="p-8 md:p-12 lg:p-16 order-2 md:order-1">
+        <header>
+          <h2
+            class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight"
           >
+            <span
+              class="block text-2xl md:text-3xl text-aFondo font-semibold mb-2"
+            >
+              Cuidado especializado para
+            </span>
+            Tus Mascotas
+          </h2>
+        </header>
+
+        <p class="text-lg md:text-xl text-gray-600 mb-8 md:mb-12 max-w-prose">
+          En Proveco Pets entregamos soluciones integrales para la salud y
+          bienestar de tus compañeros peludos. Calidad certificada y amor animal
+          en cada producto.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <button
+            class="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary/20"
+            aria-label="Ver productos para mascotas"
+          >
+            Ver productos
+          </button>
+          <button
+            class="border-2 border-primary text-primary hover:bg-primary/10 px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary/20"
+            aria-label="Más información sobre Proveco Pets"
+          >
+            Conoce más
+          </button>
+        </div>
+      </article>
+
+      <!-- Contenedor de imagen responsive -->
+      <div class="relative h-96 md:h-auto order-1 md:order-2">
+        <Image
+          src={mascotasImage}
+          alt="Mascotas felices: perro y gato jugando"
+          class="object-cover w-full h-full rounded-xl"
+          widths={[600, 800, 1200]}
+          loading="lazy"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent md:bg-gradient-to-l"
+        >
         </div>
       </div>
     </div>
-    <div
-      class="w-1/3 lg:w-[48%] md:flex items-center justify-center absolute top-0 right-0 h-full overflow-hidden my-4"
-    >
-      <div class="absolute w-full">
-        <Image
-          src={imagen}
-          alt="Monitor computadora de escritorio"
-          class="object-cover rounded-md"
-        />
-      </div>
-    </div>
-  </div>
+  </section>
 </Container>

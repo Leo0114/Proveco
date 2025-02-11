@@ -3,14 +3,16 @@ import Layout from "../layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import { seoConfig } from "@constants/SEO";
 import Title from "@components/shared/Title.astro";
-import ProductsZoo from "@components/products/ProductosZoo";
+import PetsIntro from "@components/pets/PetsIntro.astro";
+import ProductPets from "@components/pets/ProductPets";
 
-const { keywords, description, title } = seoConfig.productos;
+const { keywords, description, title } = seoConfig.pets;
 ---
 
 <Layout title={title} description={description} keywords={keywords}>
   <Container>
-    <Title title="Productos" />
-    <ProductsZoo client:visible />
+    <Title title="Proveco Pets" />
+    <ProductPets client:visible />
+    <PetsIntro />
   </Container>
 </Layout>

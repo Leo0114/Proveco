@@ -1,23 +1,25 @@
-import imagen from "@assets/monitor.webp";
+import sucur from "@assets/images/sucursales.avif";
+import products from "@assets/images/cows.avif";
+import pets from "@assets/images/dogs.webp";
 
 export const sections = [
   {
-    imagen: imagen,
+    imagen: products,
     title: "Productos",
     path: "/productos/",
     content:
       "Encuentra las herramientas necesarias para el cuidado de tus animales.",
   },
   {
-    imagen: imagen,
-    title: "Servicios",
-    path: "/servicios/",
+    imagen: sucur,
+    title: "Sucursales",
+    path: "/contacto/",
     content: "Alimento balanceado y de calidad para todos tus animales.",
   },
   {
-    imagen: imagen,
-    title: "Sucursales",
-    path: "/contact/",
+    imagen: pets,
+    title: "Proveco Pets",
+    path: "/pet/",
     content: "Productos especializados para el bienestar animal.",
   },
 ];

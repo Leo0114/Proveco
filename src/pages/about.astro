@@ -1,0 +1,24 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import Title from "@components/shared/Title.astro";
+import AboutContacto from "@components/about/AboutContacto.astro";
+import MiVi from "@components/about/MiVi.astro";
+import Team from "@components/about/Team.astro";
+import Trayectoria from "@components/about/Trayectoria.astro";
+import Valores from "@components/about/Valores.astro";
+import { seoConfig } from "@constants/SEO";
+
+const { description, title, keywords } = seoConfig.about;
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+  <Container>
+    <Title title="Acerca de Proveco" />
+    <Trayectoria />
+    <MiVi />
+    <Valores />
+    <Team />
+    <AboutContacto />
+  </Container>
+</Layout>

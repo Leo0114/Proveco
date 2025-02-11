@@ -1,0 +1,49 @@
+---
+const Values = [
+  {
+    title: "Excelencia",
+    description:
+      "Buscamos la máxima calidad en todos nuestros productos y servicios.",
+  },
+  {
+    title: "Innovación",
+    description: "Nos mantenemos a la vanguardia en soluciones veterinarias.",
+  },
+  {
+    title: "Compromiso",
+    description: "Dedicación total al bienestar y la salud de los animales.",
+  },
+  {
+    title: "Sostenibilidad",
+    description: "Desarrollamos prácticas responsables con el medio ambiente.",
+  },
+  {
+    title: "Integridad",
+    description:
+      "Actuamos con honestidad y ética en todas nuestras operaciones.",
+  },
+  {
+    title: "Servicio",
+    description:
+      "Orientados a satisfacer las necesidades de nuestros clientes.",
+  },
+];
+---
+
+<section class="mb-20">
+  <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">
+    Nuestros Valores
+  </h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    {
+      Values.map((valor, index) => (
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">
+            {valor.title}
+          </h3>
+          <p class="text-gray-600">{valor.description}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

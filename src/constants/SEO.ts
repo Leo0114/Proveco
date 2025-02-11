@@ -18,12 +18,13 @@ export const seoConfig = {
     keywords:
       "productos veterinarios, alimentos para animales, complementos, PROVECO",
   },
-  servicios: {
-    title: "Servicios",
+
+  pets: {
+    title: "Proveco Pets",
     description:
-      "En PROVECO brindamos asesoría especializada y soluciones integrales para el cuidado y salud de tus animales.",
+      "Todo para el cuidado de tus mascotas. Productos especializados y servicios dedicados al bienestar de animales domésticos y compañía.",
     keywords:
-      "servicios veterinarios, asesoría animal, PROVECO, cuidado animal",
+      "Proveco Pets, mascotas, alimentos para mascotas, cuidado de mascotas, productos para perros y gatos",
   },
   blog: {
     title: "Blog",
@@ -37,5 +38,12 @@ export const seoConfig = {
       "Ponte en contacto con PROVECO para obtener más información sobre nuestros productos y servicios.",
     keywords:
       "contacto PROVECO, atención al cliente, consulta, asesoría animal",
+  },
+  about: {
+    title: "Acerca de",
+    description:
+      "Conoce nuestra historia, misión y compromiso con el cuidado animal. Más de 10 años dedicados a la salud y bienestar veterinario.",
+    keywords:
+      "sobre Proveco, historia de Proveco, misión y valores, equipo veterinario, compromiso con animales",
   },
 };
