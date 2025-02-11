@@ -2,9 +2,12 @@
 import Layout from "@layouts/Layout.astro";
 import ContactForm from "@components/contact/ContactForm.astro";
 import SucursalesGrid from "@components/contact/SucursalesGrid.astro";
+import { seoConfig } from "@constants/SEO";
+
+const { keywords, title, description } = seoConfig.contacto;
 ---
 
-<Layout>
+<Layout keywords={keywords} title={title} description={description}>
   <ContactForm />
   <SucursalesGrid />
 </Layout>

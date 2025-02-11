@@ -1,0 +1,15 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import { seoConfig } from "@constants/SEO";
+
+const { keywords, description, title } = seoConfig.productos;
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+  <Container>
+    <main class="min-h-screen flex items-center justify-center">
+      <h2 class="text-texto">Productos</h2>
+    </main>
+  </Container>
+</Layout>

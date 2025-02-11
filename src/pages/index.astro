@@ -6,9 +6,12 @@ import OCard from "@components/try/OCard.astro";
 import Content from "@components/try/Content.astro";
 import FacebookSection from "@components/home/FacebookSection.astro";
 import ContentGrid from "@components/home/ContentGrid.astro";
+import { seoConfig } from "@constants/SEO";
+
+const { keywords, description, title } = seoConfig.inicio;
 ---
 
-<Layout>
+<Layout title={title} description={description} keywords={keywords}>
   <HeroSlider slides={Slider} client:load />
   <Content />
   <ContentGrid />

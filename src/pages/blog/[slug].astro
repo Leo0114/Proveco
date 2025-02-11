@@ -1,0 +1,102 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import { Formatter } from "../../utils/formatter";
+import logo from "@assets/logo.avif";
+import { seoConfig } from "@constants/SEO";
+
+export const getStaticPaths = async () => {
+  const blogs = await getCollection("blog");
+  return blogs.map((blog) => ({
+    params: { slug: blog.slug },
+    props: { blog },
+  }));
+};
+
+const { blog } = Astro.props;
+const { slug, data } = blog;
+const { title, image, author } = data;
+const { Content, headings } = await blog.render();
+const { keywords, description } = seoConfig.blog;
+---
+
+<Layout
+  title={seoConfig.blog.title}
+  description={description}
+  keywords={keywords}
+>
+  <main class="py-8">
+    <Container>
+      <!-- Botón de Regresar -->
+      <div class="mb-6">
+        <button
+          onclick="history.back()"
+          class="px-4 py-2 bg-primary hover:bg-primary/70 text-white rounded shadow focus:outline-none focus:ring-2 focus:ring-bluePrimary"
+        >
+          &larr; Regresar
+        </button>
+      </div>
+
+      <!-- Título del Blog -->
+      <h1 class="text-texto text-3xl sm:text-4xl font-bold mb-4">
+        {title}
+      </h1>
+
+      <!-- Información del Autor -->
+      <div class="flex items-center mb-6">
+        <Image
+          src={logo}
+          class="rounded-full"
+          alt={author}
+          width={48}
+          height={48}
+        />
+        <div class="ml-5">
+          <span class="text-texto font-medium">{author}</span>
+          <div class="text-xs text-texto-claro">
+            {Formatter.formatDate(new Date(data.date))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Imagen Destacada -->
+      <div class="w-full my-5">
+        <Image
+          transition:name={`${slug}-img`}
+          src={image}
+          alt={title}
+          width={640}
+          height={360}
+          quality={"high"}
+          class="w-full h-[380px] object-cover rounded-lg transition-all duration-300"
+        />
+      </div>
+
+      <!-- Tabla de Contenidos Resaltada -->
+      <div class="mb-6 p-4 border border-gray-300 rounded-lg bg-gray-50">
+        <h3 class="text-texto font-semibold mb-2">Tabla de contenidos</h3>
+        <ul class="list-decimal list-inside space-y-1">
+          {
+            headings.map((heading, index) => (
+              <li>
+                <a
+                  href={`#${heading.slug}`}
+                  class="text-bluePrimary hover:underline"
+                >
+                  {index + 1} - {heading.text}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Contenido del Blog -->
+      <div class="prose prose-indigo max-w-none">
+        <Content />
+      </div>
+    </Container>
+  </main>
+</Layout>

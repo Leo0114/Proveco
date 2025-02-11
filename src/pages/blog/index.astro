@@ -1,0 +1,21 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import { getCollection } from "astro:content";
+import BlogCard from "@components/blog/BlogCard.astro";
+import { seoConfig } from "@constants/SEO";
+
+const blogPost = await getCollection(
+  "blog",
+  (post) => post.data.isDraft === false
+);
+const { keywords, description, title } = seoConfig.blog;
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+  <Container>
+    <main class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-2 md:mt-16">
+      {blogPost.map((post) => <BlogCard post={post} />)}
+    </main>
+  </Container>
+</Layout>
